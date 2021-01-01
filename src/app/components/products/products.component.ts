@@ -1,16 +1,15 @@
-import { Component } from '@angular/core';
-import { Product } from './models/product';
+import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/product';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styles: [
+  ]
 })
-export class AppComponent {
-  title = 'platzi-store';
+export class ProductsComponent implements OnInit {
 
-
-  products: Product[] = [
+   products: Product[] = [
     {
       id: '1',
       image: 'assets/images/camiseta.png',
@@ -54,6 +53,11 @@ export class AppComponent {
       description: 'bla bla bla bla bla'
     },
   ];
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
   clickProduct(id: number) {
     console.log('product');
