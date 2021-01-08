@@ -3,9 +3,11 @@
   <app-product (productClicked)="clickProduct($event)" [product]="product"></app-product>
 </div> -->
 
+
 <div class="products">
-    <app-products *ngFor="let product of products"
-     (productClicked)="clickProduct($event)" 
-     [product]="product">
-    </aapp-products>
-  </div>
+  <app-product
+    *ngFor="let product of products"
+    (productClicked)="clickProduct($event)"
+    [product]="product">
+  </app-product>
+</div>

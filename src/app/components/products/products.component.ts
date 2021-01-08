@@ -3,9 +3,7 @@ import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-products',
-  templateUrl: './products.component.html',
-  styles: [
-  ]
+  templateUrl: './products.component.html'
 })
 export class ProductsComponent implements OnInit {
 
@@ -60,8 +58,7 @@ export class ProductsComponent implements OnInit {
   }
 
   clickProduct(id: number) {
-    console.log('product');
-    console.log(id);
+    console.log('product', id);    
   }
 
 }
