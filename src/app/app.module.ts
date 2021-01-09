@@ -12,6 +12,9 @@ import { CartComponent } from './components/cart/cart.component';
 import { ExponentialPipe } from './pipes/exponential.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { DemoComponent } from './components/demo/demo.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { DemoComponent } from './components/demo/demo.component';
     CartComponent,
     ExponentialPipe,
     HighlightDirective,
-    DemoComponent
+    DemoComponent,
+    HeaderComponent,
+    FooterComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
