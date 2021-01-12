@@ -4,3 +4,9 @@
 <p> {{ product.description | slice:0:10}}</p>
 <p>{{today | date:'medium'}}</p>
 <button (click)="addCart()">Agregar al carrito</button>
+<!-- Para formar una URL se le pasa un array con los parametros para que routerLink 
+los concatene y de esta manera hacer un Redirect a page con parámetro: 
+<a [routerLink]="[’/routeName’,id]">Ver Detalle</a> -->
+<a [routerLink]="['/products', product.id]">Ver detalle</a>
+<!-- También se puede hacer concatenación con la sintaxis de template-expression: -->
+<!-- <a routerLink="/products/{{product.id}}">Ir al producto</a> -->
