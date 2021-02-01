@@ -1,12 +1,16 @@
-<h3 appHighlight>{{ product.title }}</h3>
-<img [src]="product.image" width="50px" height="50px">
-<strong appHighlight [backgroundColor]="'black'" [color]="'#ffffff'">{{ product.price }}</strong>
-<p> {{ product.description | slice:0:10}}</p>
-<p>{{today | date:'medium'}}</p>
-<button (click)="addCart()">Agregar al carrito</button>
-<!-- Para formar una URL se le pasa un array con los parametros para que routerLink 
-los concatene y de esta manera hacer un Redirect a page con parámetro: 
-<a [routerLink]="[’/routeName’,id]">Ver Detalle</a> -->
-<a [routerLink]="['/products', product.id]">Ver detalle</a>
-<!-- También se puede hacer concatenación con la sintaxis de template-expression: -->
-<!-- <a routerLink="/products/{{product.id}}">Ir al producto</a> -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ product.title | uppercase }}</mat-card-title>
+    <mat-card-subtitle>{{ product.price | currency }}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="crop-image">
+    <img [src]="product.image" alt="">
+  </div>
+  <mat-card-content>
+    <p>{{ product.description | slice:0:10 }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button [routerLink]="['/products', product.id]">Ver detalle</a>
+    <button (click)="addCart()" mat-raised-button color="primary">Agregar al carrito</button>
+  </mat-card-actions>
+</mat-card>

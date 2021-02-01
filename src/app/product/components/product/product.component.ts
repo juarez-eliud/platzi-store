@@ -14,8 +14,7 @@ import { Product } from 'src/app/models/product';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styles: [
-  ]
+  styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit, OnChanges, OnDestroy {
 
