@@ -29,13 +29,18 @@ const routes: Routes = [
         canActivate: [AdminGuard],
         loadChildren: () => import('./contact/contact.module')
           .then(c => c.ContactModule)
+      },
+      {
+        path: 'demo',
+        loadChildren: () => import('./demo/demo.module')
+          .then(d => d.DemoModule)
       }
     ]
-  },  
+  },
   {
-    path: 'demo',
-    loadChildren: () => import('./demo/demo.module')
-      .then(d => d.DemoModule)
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module')
+      .then(a => a.AdminModule)
   },
   {
     path: '**',
