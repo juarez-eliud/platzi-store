@@ -8,6 +8,7 @@ import { TableComponent } from './components/table/table.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 
 
@@ -16,7 +17,8 @@ import { MaterialModule } from '../material/material.module';
     ProductFormComponent,
     NavigationComponent,
     TableComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProductListComponent
   ],
   imports: [
     CommonModule,
