@@ -29,4 +29,16 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
+  createProduct() {
+    
+  }
+
+  updateProduct(){
+   
+  }
+
+  deleteProduct() {
+    
+  }
+
 }
