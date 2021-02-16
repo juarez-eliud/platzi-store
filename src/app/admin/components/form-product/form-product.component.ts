@@ -46,4 +46,8 @@ export class FormProductComponent implements OnInit {
     console.log(this.form.value);
   }
 
+  get priceField() {
+    return this.form.get('price');
+  }
+
 }
