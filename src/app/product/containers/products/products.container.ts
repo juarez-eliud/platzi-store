@@ -4,9 +4,9 @@ import { ProductsService } from 'src/app/core/services/products.service';
 
 @Component({
   selector: 'app-products',
-  templateUrl: './products.component.html'
+  templateUrl: './products.container.html'
 })
-export class ProductsComponent implements OnInit {
+export class ProductsContainer implements OnInit {
 
   products: Product[];
 
@@ -23,6 +23,7 @@ export class ProductsComponent implements OnInit {
       this.products = products;
     });
   }
+  
   clickProduct(id: number) {
     console.log('product', id);    
   }
