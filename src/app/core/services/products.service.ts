@@ -5,6 +5,8 @@ import { catchError, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Product } from '../../models/product';
 import { throwError } from 'rxjs'
+import { HandleHttpResponseError } from 'src/app/utils/handleError';
+import * as Sentry from "@sentry/angular";
 
 interface User {
   email: string;
@@ -33,6 +35,9 @@ export class ProductsService {
 
   updateProduct(id: string, changes: Partial<Product>) {
     return this.http.put(`${environment.url_api}/products/${id}`, changes)
+    .pipe(
+      catchError(HandleHttpResponseError)
+    );
   }
 
   deleteProduct(id: string) {
@@ -43,7 +48,7 @@ export class ProductsService {
   }
 
   getRandomUsers(): Observable<User[]> {
-    return this.http.get('https://randomuser.me/api/?results=2')
+    return this.http.get('https://randomuser---.me/api/?results=2')
     .pipe(
       /* El catch error siempre va antes de procesar la data ya que el error ocurre antes,
       si no hay error continua con la siguiente la cual es la de mapeo */
@@ -65,7 +70,8 @@ export class ProductsService {
   }
 
   private handleError(error: HttpErrorResponse) {
-    console.log(error);
+    console.error(error);
+    Sentry.captureException(error);
     /* Como un observable es parte de un flujo de datos se 
     retorna un observable de tipo error */
     return throwError('ups algo salio mal');
