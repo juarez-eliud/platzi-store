@@ -22,6 +22,9 @@ export class ProductDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+   /* Para simplificar la data que se obtiene de  para producto
+    se pasa directamente a la variable tipo observable 
+    para hacer una suscripción async en el template directamente */
     this.product$ = this.route.params
     .pipe(
       switchMap((params: Params) => {
@@ -40,6 +43,23 @@ export class ProductDetailComponent implements OnInit {
 
   deleteProduct() {
     
+  }
+
+  getRandomUsers() {
+    this.productsService.getRandomUsers()
+    .subscribe(users => {
+      console.log(users);
+    }, error => {
+      console.log(error);
+    }
+    );
+  }
+
+  getRandomUsersExample2() {
+    this.productsService.getRandomUsersExample2()
+    .subscribe(users => {
+      console.log(users);
+    });
   }
 
 }

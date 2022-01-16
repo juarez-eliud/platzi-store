@@ -16,16 +16,25 @@ export class ProductsContainer implements OnInit {
 
   ngOnInit(): void {
     this.fetchProducts();
+    
   }
 
-  fetchProducts(){
+  fetchProducts() {
     this.productsService.getAllProducts().subscribe(products => {
       this.products = products;
     });
   }
-  
+
   clickProduct(id: number) {
-    console.log('product', id);    
+    console.log('product', id);
+  }
+
+  test() {
+    let a = 3;
+    let ad = 3;
+    let av: boolean = ad == 3;
+    console.log(av);
+    //shitf+alt+f
   }
 
 }
