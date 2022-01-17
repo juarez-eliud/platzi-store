@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, retry } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Product } from '../../models/product';
 import { throwError } from 'rxjs'
@@ -33,6 +33,8 @@ export class ProductsService {
     return this.http.post(`${environment.url_api}/products`, product)
   }
 
+  /* Con partial solo se envía una parte de lo que se modificó y los demás
+  atributos se quedan como opcionales */
   updateProduct(id: string, changes: Partial<Product>) {
     return this.http.put(`${environment.url_api}/products/${id}`, changes)
     .pipe(
@@ -50,6 +52,7 @@ export class ProductsService {
   getRandomUsers(): Observable<User[]> {
     return this.http.get('https://randomuser---.me/api/?results=2')
     .pipe(
+      retry(3),
       /* El catch error siempre va antes de procesar la data ya que el error ocurre antes,
       si no hay error continua con la siguiente la cual es la de mapeo */
       catchError(this.handleError),

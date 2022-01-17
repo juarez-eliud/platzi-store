@@ -43,6 +43,8 @@ const routes: Routes = [
       .then(a => a.AdminModule)
   },
   {
+    /* Por defecto el no match siempre hay que dejarlo al ultimo 
+    para que pueda hacer match con las demás rutas */
     path: '**',
     loadChildren: () => import('./page-not-found/page-not-found.module')
       .then(n => n.PageNotFoundModule)

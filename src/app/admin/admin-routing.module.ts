@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormProductComponent } from './components/form-product/form-product.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { TableComponent } from './components/table/table.component';
@@ -21,7 +22,7 @@ const routes: Routes = [
         component: TableComponent
       },
       {
-        path: 'dashboard',
+        path: '',
         component: DashboardComponent
       },
       {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'products/create',
         component: FormProductComponent
+      },
+      {
+        path: 'products/edit/:id',
+        component: ProductEditComponent
       }
     ]
   }

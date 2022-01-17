@@ -14,6 +14,8 @@ export class FooterComponent implements OnInit {
       Validators.required,
       Validators.email
     ]);
+    /* Los cambios de este control los retorna en forma de stream de datos es decir
+    con el patrón observable que va escuchando los cambios de este campo */
     // this.emailField.valueChanges.subscribe(value => console.log(value));
   }
 

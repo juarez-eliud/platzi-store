@@ -42,6 +42,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatMenuModule,
     MatFormFieldModule
   ],
+  //Todos los modulos deben de exportarse para que puedan ser usados
   exports: [
     MatButtonModule,
     MatToolbarModule,
