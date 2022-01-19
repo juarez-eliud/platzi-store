@@ -9,7 +9,9 @@ import {
   DoCheck,
   OnDestroy
 } from '@angular/core';
+import { CartService } from '@core/services/cart.service';
 import { Product } from 'src/app/models/product';
+
 
 @Component({
   selector: 'app-product',
@@ -25,7 +27,7 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
 
   today = new Date();
 
-  constructor() {
+  constructor(private cartService: CartService) {
     console.log('1. constructor');
   }
 
@@ -50,7 +52,9 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
   addCart() {
     console.log('añadir al carrito');
     this.productClicked.emit(this.product.id);
+    this.cartService.addCart(this.product);
   }
+
 
   /* La forma en que Angular opera su ciclo de vida es
     * Primero se crea el constructor
