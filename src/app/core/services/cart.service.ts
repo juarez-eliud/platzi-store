@@ -21,4 +21,31 @@ export class CartService {
     //Se les notifica a todos los componentes que esten suscritos que hubo un cambio con next
     this.cart.next(this.products);
   }
+
+  removeFromCart(productId: String) {
+    this.products = this.products.filter(product => product.id !== productId);
+    this.cart.next(this.products);
+  }
+
+  /**
+   * Quita un producto especifico del carrito.
+   * @param productId Identificador del producto.
+   */
+  remove(productId: String): void {
+    let i: number = this.products.length - 1;
+    let productFound: Boolean = false;
+    let aux: Product[] = [];
+
+    while (i >= 0) {
+      if (!productFound && this.products[i].id === productId) {
+        productFound = true;
+      } else {
+        aux.unshift(this.products[i]);
+      }
+      i--;
+    }
+
+    this.products = aux;
+    this.cart.next(aux);
+  }
 }

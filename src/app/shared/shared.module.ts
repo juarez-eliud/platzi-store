@@ -8,14 +8,17 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { RemoveDoubleProductsPipe } from './pipes/remove-double-products.pipe';
+import { CountingProductsPipe } from './pipes/counting-products.pipe';
 
 @NgModule({
   declarations: [
     ExponentialPipe,
     HighlightDirective,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    RemoveDoubleProductsPipe,
+    CountingProductsPipe
   ],
   imports: [
     CommonModule,
@@ -27,7 +30,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ExponentialPipe,
     HighlightDirective,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    RemoveDoubleProductsPipe,
+    CountingProductsPipe
   ]
 })
 export class SharedModule { }
