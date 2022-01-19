@@ -1,6 +1,7 @@
 <mat-horizontal-stepper>
     <mat-step>
       <ng-template matStepLabel>Sus productos</ng-template>
+      <!-- Se crea una variable temporal en el template llamada products -->
       <div *ngIf="(products$ | async) as products">
           <p *ngIf="products.length === 0">no hay productos</p>
          

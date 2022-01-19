@@ -48,6 +48,10 @@ const routes: Routes = [
       .then(a => a.AdminModule)
   },
   {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
+  {
     /* Por defecto el no match siempre hay que dejarlo al ultimo 
     para que pueda hacer match con las demás rutas */
     path: '**',

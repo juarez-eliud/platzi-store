@@ -10,8 +10,10 @@ import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 
+
 import * as Sentry from "@sentry/angular";
 import { Integrations } from "@sentry/tracing";
+
 
 Sentry.init({
   dsn: "https://a40b0a545789403e88009c90d7a4c0df@o425221.ingest.sentry.io/6151524",
@@ -40,7 +42,7 @@ Sentry.init({
     SharedModule,
     CoreModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
