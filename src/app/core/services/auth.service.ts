@@ -21,6 +21,7 @@ export class AuthService {
   }
 
   hasUser() {
+    //Return an observable
     return this.af.authState;
   }
 
