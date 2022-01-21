@@ -160,6 +160,16 @@
               "devServerTarget": "platzi-store:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "platzi-store:build:production",
+            "firebaseProject": "platzi-store-38ad9",
+            "firebaseHostingSite": "platzi-store-38ad9"
+          }
         }
       }
     }

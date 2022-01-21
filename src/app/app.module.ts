@@ -10,9 +10,10 @@ import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 
-
 import * as Sentry from "@sentry/angular";
 import { Integrations } from "@sentry/tracing";
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
 
 
 Sentry.init({
@@ -42,7 +43,8 @@ Sentry.init({
     SharedModule,
     CoreModule,
     BrowserAnimationsModule,
-    HttpClientModule  
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent]
