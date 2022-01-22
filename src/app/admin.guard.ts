@@ -25,7 +25,7 @@ export class AdminGuard implements CanActivate {
       el cual genera una intersepción entre un flujo de datos pero no
       realiza alguna mutación */
       tap(user => console.log(user)),
-      map(user => user === null ? this.router.parseUrl('/') : true)
+      map(user => !user ? this.router.parseUrl('/auth/login') : true)
     );
   }
   
