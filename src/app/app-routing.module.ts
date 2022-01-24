@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { CustomPreloadService } from '@core/services/custom-preload.service';
 import { AdminGuard } from './admin.guard';
 import { LayoutComponent } from './layout/layout.component';
-
 
 const routes: Routes = [
   {
@@ -17,12 +17,14 @@ const routes: Routes = [
       {
         path: 'home',
         loadChildren: () => import('./home/home.module')
-          .then(h => h.HomeModule)
+          .then(h => h.HomeModule),
+        data: { preload: true }
       },
       {
         path: 'products',
         loadChildren: () => import('./product/product.module')
-        .then(p => p.ProductModule)
+        .then(p => p.ProductModule),
+        data: { preload: true }
       },
       {
         path: 'contact',
@@ -62,7 +64,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: PreloadAllModules,
+    preloadingStrategy: CustomPreloadService,
     relativeLinkResolution: 'legacy'
 })],
   exports: [RouterModule]
