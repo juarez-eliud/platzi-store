@@ -10,6 +10,7 @@ import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RemoveDoubleProductsPipe } from './pipes/remove-double-products.pipe';
 import { CountingProductsPipe } from './pipes/counting-products.pipe';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CountingProductsPipe } from './pipes/counting-products.pipe';
     CommonModule,
     RouterModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    QuicklinkModule
   ], 
   exports: [
     ExponentialPipe,

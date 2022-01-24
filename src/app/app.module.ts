@@ -15,7 +15,7 @@ import { Integrations } from "@sentry/tracing";
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-
+import { QuicklinkModule } from 'ngx-quicklink';
 
 Sentry.init({
   dsn: "https://a40b0a545789403e88009c90d7a4c0df@o425221.ingest.sentry.io/6151524",
@@ -46,6 +46,7 @@ Sentry.init({
     BrowserAnimationsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
+    QuicklinkModule
   ],
   providers: [
     {
