@@ -6,7 +6,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 
@@ -16,6 +15,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { LayoutComponent } from './website/components/layout/layout.component';
 
 Sentry.init({
   dsn: "https://a40b0a545789403e88009c90d7a4c0df@o425221.ingest.sentry.io/6151524",

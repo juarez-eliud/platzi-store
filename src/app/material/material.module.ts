@@ -18,6 +18,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatGridListModule,
     MatMenuModule,
     MatFormFieldModule,
-    MatStepperModule
+    MatStepperModule,
+    MatChipsModule
   ],
   //Todos los modulos deben de exportarse para que puedan ser usados
   exports: [
@@ -62,7 +64,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatGridListModule,
     MatMenuModule,
     MatFormFieldModule,
-    MatStepperModule
+    MatStepperModule,
+    MatChipsModule
   ]
 })
 export class MaterialModule { }

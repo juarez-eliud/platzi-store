@@ -3,7 +3,8 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { CustomPreloadService } from '@core/services/custom-preload.service';
 import { QuicklinkStrategy } from 'ngx-quicklink';
 import { AdminGuard } from './admin.guard';
-import { LayoutComponent } from './layout/layout.component';
+import { LayoutComponent } from './website/components/layout/layout.component';
+
 
 const routes: Routes = [
   {
@@ -17,29 +18,29 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        loadChildren: () => import('./home/home.module')
+        loadChildren: () => import('./website/home/home.module')
           .then(h => h.HomeModule),
         data: { preload: true }
       },
       {
         path: 'products',
-        loadChildren: () => import('./product/product.module')
+        loadChildren: () => import('./website/product/product.module')
         .then(p => p.ProductModule),
         data: { preload: true }
       },
       {
         path: 'contact',
-        loadChildren: () => import('./contact/contact.module')
+        loadChildren: () => import('./website/contact/contact.module')
           .then(c => c.ContactModule)
       },
       {
         path: 'order',
-        loadChildren: () => import('./order/order.module')
+        loadChildren: () => import('./website/order/order.module')
           .then(c => c.OrderModule)
       },
       {
         path: 'demo',
-        loadChildren: () => import('./demo/demo.module')
+        loadChildren: () => import('./website/demo/demo.module')
           .then(d => d.DemoModule)
       }
     ]
