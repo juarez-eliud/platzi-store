@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RemoveDoubleProductsPipe } from './pipes/remove-double-products.pipe';
 import { CountingProductsPipe } from './pipes/counting-products.pipe';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { FibonacciPipe } from './pipes/fibonacci.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { QuicklinkModule } from 'ngx-quicklink';
     HeaderComponent,
     FooterComponent,
     RemoveDoubleProductsPipe,
-    CountingProductsPipe
+    CountingProductsPipe,
+    FibonacciPipe
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { QuicklinkModule } from 'ngx-quicklink';
     HeaderComponent,
     FooterComponent,
     RemoveDoubleProductsPipe,
-    CountingProductsPipe
+    CountingProductsPipe,
+    FibonacciPipe
   ]
 })
 export class SharedModule { }

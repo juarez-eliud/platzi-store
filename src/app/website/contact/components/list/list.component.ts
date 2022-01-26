@@ -1,14 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { EmployeeData } from 'src/app/models/employee.model';
 
-const fibonacci = (num: number): number => {
-  if (num === 1 || num === 2) {
-    return 1;
-  }
-  return fibonacci(num - 1) + fibonacci(num - 2);
-};
-
-/* Com ChangeDetectionStrategy.OnPush escucha los eventos solo de la lista
+/* Com ChangeDetectionStrategy.OnPush escucha los eventos solo de la lista (componente)
 que está cambiando a diferencia del ChangeDetectionStrategy.Default que 
 escucha continuamente a las dos listas */
 @Component({
@@ -33,10 +26,4 @@ export class ListComponent implements OnInit {
     this.add.emit(this.label);
     this.label = '';
   }
-
-  calc(item: EmployeeData) {
-    console.log('list', this.title);
-    return fibonacci(item.num);
-  }
-
 }
