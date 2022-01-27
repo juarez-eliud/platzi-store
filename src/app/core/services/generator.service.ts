@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { interval } from 'rxjs'; //Genera un valor cada cierto tiempo
 import { EmployeeData } from 'src/app/models/employee.model';
 
 @Injectable({
@@ -29,4 +30,9 @@ export class GeneratorService {
       num: this.generateNumber(numRange)
     };
   }
+
+  getData() {
+    return interval(2000);
+  }
+
 }
