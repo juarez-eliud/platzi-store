@@ -16,6 +16,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { QuicklinkModule } from 'ngx-quicklink';
 import { LayoutComponent } from './website/components/layout/layout.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 Sentry.init({
   dsn: "https://a40b0a545789403e88009c90d7a4c0df@o425221.ingest.sentry.io/6151524",
@@ -46,7 +47,18 @@ Sentry.init({
     BrowserAnimationsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
-    QuicklinkModule
+    QuicklinkModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerImmediately'
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [
     {
